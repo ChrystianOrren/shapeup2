@@ -90,7 +90,7 @@ const Settings = () => {
                         <Image source={require('./assets/images/aboutPic.jpg')} style={styles.aboutPic} />
                     </View>
                 : <></>}
-                {/* <TouchableOpacity onPress={() => supportMe()} style={styles.touchable}>
+                <TouchableOpacity onPress={() => supportMe()} style={styles.touchable}>
                     <Text style={styles.touchText}>Support Me</Text>
                     { !support ? 
                     <FontAwesome5 name="chevron-right" size={30} color="#FFB2E6" /> :
@@ -126,7 +126,7 @@ const Settings = () => {
                             </View>
                          : <></>}
                     </View>
-                : <></>} */}
+                : <></>}
             </View>
 
         </ScrollView>

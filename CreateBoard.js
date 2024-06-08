@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, TouchableOpacity, View, Text, StyleSheet, TextInput, FlatList, Image, Keyboard } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import Storage from 'react-native-storage';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 const storage = new Storage({
@@ -137,7 +137,7 @@ const CreateBoard = () => {
             style={[styles.tailItem, item.title === tail && styles.selectedTailItem]}
             onPress={() => pressTailShape(item.title)}
         >
-            <Image source={item.imgUrl} style={styles.tailImage} /> 
+            <Image source={item.imgUrl} style={styles.tailImage} resizeMode='cover'/> 
             <Text style={{ fontFamily: 'ShareTech-Regular', fontSize: 15, marginTop: 5 }}>{item.title}</Text>
         </TouchableOpacity>
     );
@@ -272,6 +272,7 @@ const CreateBoard = () => {
                 numColumns={3}
                 contentContainerStyle={styles.tailContainer}
             />
+            
         </View>
 
         { err1 ? 
@@ -408,6 +409,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'green',
     },
+    // tailImage: {
+    //     width: 50, 
+    //     height: 50
+    // },
 });
 
 export default CreateBoard;
